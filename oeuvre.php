@@ -6,9 +6,7 @@
     // Si l'URL ne contient pas d'id, on redirige sur la page d'accueil
     if(empty($_GET['id'])) {
         header('Location: index.php');
-    }
-
-    $oeuvre = null;
+    };
 
     $requete = $db->prepare('SELECT * FROM oeuvres WHERE id=? ' );
     $requete->execute([$_GET['id']]);
